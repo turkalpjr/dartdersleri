@@ -1,14 +1,27 @@
 void main(List<String> args) {
   User user1 = User();
-  NormalUser normal1 = NormalUser();
-  normal1.email = "gigi@gmail.com";
-  normal1.password = "2134";
-  normal1.davetEt();
+  NormalUser user2 = NormalUser();
 
-  SadeceOkuyabilenNormalUser sou = SadeceOkuyabilenNormalUser();
-  sou.davetEt();
-  sou.girisYap();
-  sou.adiniSoyle();
+  SadeceOkuyabilenNormalUser user3 = SadeceOkuyabilenNormalUser();
+
+  AdminUser user4 = AdminUser();
+
+  User user5 = AdminUser();
+  User user6 = SadeceOkuyabilenNormalUser();
+
+  List<User> tumUserlar = [];
+  tumUserlar.add(user1);
+  tumUserlar.add(user2);
+  tumUserlar.add(user3);
+
+  test(user1);
+  test(user2);
+  test(user3);
+  test(user4);
+}
+
+void test(User kullanici) {
+  kullanici.girisYap();
 }
 
 class User {
@@ -37,6 +50,11 @@ class SadeceOkuyabilenNormalUser extends NormalUser {
 }
 
 class AdminUser extends User {
+  @override
+  void girisYap() {
+    print("admin user giriş yaptı");
+  }
+
   void toplamKullaniciSayisiniGoster() {
     print("Toplam user sayisi 20");
   }
